@@ -1,0 +1,30 @@
+->	doamin.com/api/create_group
+	->	POST method
+		-	user_id
+		-	title
+
+
+->	doamin.com/api/get_groups
+	->	POST method
+		-	user_id
+
+
+->	doamin.com/api/delete_group
+	->	POST method
+		-	group_id
+
+
+->	doamin.com/api/add_to_list
+	->	POST method
+		-	group_id
+		-	product_id
+
+
+->	doamin.com/api/get_list
+	->	POST method
+		-	group_id
+
+
+->	doamin.com/api/delete_list
+	->	POST method
+		-	list_id

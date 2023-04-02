@@ -1,0 +1,621 @@
+domain.com = admin.easydoor.pk
+api:	url to hit
+arg:	url arguments
+req:	required fields
+opt:	optinal fields
+res:	responce in case of successfull
+err:	responce in case of any error
+not:	if any note with
+
+
+
+
+index:
+1.	Signin -
+2.	Submit login -
+3.	Change Password
+4.	Update Userdata -
+5.	Slider -
+6.	Banner
+7.	Banner
+8.	Categories -
+9.	Categories -
+10.	Coupons
+11.	Products -
+12.	Products -
+13.	Products -
+14.	Single -
+15.	Pages -
+16.	Pages -
+17.	Pages -
+18.	Orders
+19.	Orders
+20.	Orders
+21.	Orders -
+22.	Address -
+23.	Address -
+24.	Address -
+25.	Address -
+26.	Address -
+27.	Address -
+28.	Address -
+
+
+
+1.	signin
+	api:	http://domain.com/index.php/api/login?phone=03331022025
+	req:	{ phone, password }
+	res:	{ "responce": true, "status":"signin/signup"}
+	err:	{ "responce": false, "error": "phone number missing" }
+
+
+2.	Submit login
+	api:	http://domain.com/index.php/api/submit_login?phone=03331022025&password=chor&status=sigin
+	req:	{ phone, password, status }
+	res:	{ "responce": true, "user_data": data } incase of status signup
+			{ "responce": true, "user_data": data, "addresses": addresses} incase of status signin
+	err:	{ "responce": false, "error": "password is not correct" } incase of status is "signin"
+			{ "responce": false, "error": "please provide phone/password" } incase of missing any field
+
+
+3.	Change Password
+	api:	http://domain.com/index.php/api/change_password?user_id=8&current_password=chor&new_password=chorchor
+	req:	{ user_id, current_password, new_password }
+	res:	{ "responce": true }
+	err:	{ "responce": false, "error": "please provide required information" }
+			{ "responce": false, "error": "Current password do not match." }
+			{ "responce": false, "error": "not updated, please try again." }
+
+
+4.	Update Userdata
+	api:	http://domain.com/index.php/api/update_userdata?user_id=8&fname=M AB&lname=Khan
+	req:	{ user_id, fname, lname }
+	opt:	{ email, gender(male/female), country_id, state_id, city_id, dob, house_no(address), image(image file) }
+	res:	{ "responce":true, "data":{"user_id":"8","fullname":"MAB Khan","email":"","phone":"03321022025","image":"","city":"0","socity_id":"0","house_no":""} }
+	err:	{ "responce": false, "error": "please provide required information" }
+			{ "responce": false, "error": "not updated, please try again." }
+			{ "responce": false, "error": "Email is already in use.(in case email updated)" }
+			{ "responce": false, "error": "Error! : (dynamic error according to matter, in case image uploading)" }
+
+
+5.	Slider
+	api:	http://domain.com/index.php/api/get_sliders
+	res:	{ "id": "1", "slider_title": "Yes Yes", "slider_url": "", "slider_image": "87609155231308533.jpg", "sub_cat": "62", "slider_status": "1" }
+
+6.	Banner
+	api:	http://domain.com/index.php/api/get_banner
+	res:	{
+				[
+					{
+						"id": "5",
+						"slider_title": "banne2",
+						"slider_url": "",
+						"slider_image": "banner@2x1.jpg",
+						"sub_cat": "52",
+						"slider_status": "0"
+					},
+					{
+						"id": "6",
+						"slider_title": "easy_to_you",
+						"slider_url": "",
+						"slider_image": "banner-12.png",
+						"sub_cat": "10",
+						"slider_status": "0"
+					}
+				]
+			}
+
+7.	Banner
+	api:	http://domain.com/index.php/api/get_feature_banner
+	res:	{
+				[
+					{
+						"id": "5",
+						"slider_title": "banne2",
+						"slider_url": "",
+						"slider_image": "banner@2x1.jpg",
+						"sub_cat": "52",
+						"slider_status": "0"
+					}
+				]
+			}
+
+
+8.	Categories
+	api:	http://domain.com/index.php/api/get_categories?parent=1
+	opt:	{ parent }
+	res:	{
+			    "responce": true,
+			    "data": [
+			        {
+			            "id": "1",
+			            "cat_type_id": "2",
+			            "title": "Women",
+			            "arb_title": "",
+			            "urdu_title": "Women",
+			            "slug": "women",
+			            "parent": "0",
+			            "leval": "0",
+			            "tags": "shirts, winter jeans, summer t shirt",
+			            "description": "",
+			            "image": "Euro_store_online_delivery_Women_adult-beautiful-beauty-413727-1200x500-c-default_91f7d52ec4c3b80525a35f328fe4ed51.jpg",
+			            "image2": "",
+			            "image2_status": "",
+			            "main_menu": "yes",
+			            "main_right_menu": "yes",
+			            "main_home_page": "yes",
+			            "main_home_page_under_parent": "yes",
+			            "status": "1",
+			            "meta_title": "",
+			            "meta_key": "",
+			            "meta_desc": "",
+			            "filters": "size,color",
+			            "filter_ids": "",
+			            "Count": "2",
+			            "PCount": "0",
+			            "sub_categories": "Winter,Summer"
+			        },
+			        {
+			            "id": "7",
+			            "cat_type_id": "2",
+			            "title": "Men",
+			            "arb_title": "",
+			            "urdu_title": "Men",
+			            "slug": "men",
+			            "parent": "0",
+			            "leval": "0",
+			            "tags": "",
+			            "description": "",
+			            "image": "Euro_store_online_delivery_01c4ef05ca5627f045d0fa2084725c67.jpg",
+			            "image2": "",
+			            "image2_status": "",
+			            "main_menu": "yes",
+			            "main_right_menu": "yes",
+			            "main_home_page": "yes",
+			            "main_home_page_under_parent": "yes",
+			            "status": "1",
+			            "meta_title": "",
+			            "meta_key": "",
+			            "meta_desc": "",
+			            "filters": "",
+			            "filter_ids": "",
+			            "Count": "2",
+			            "PCount": "0",
+			            "sub_categories": "Winter Men,Summer Men"
+			        }
+			    ]
+			}
+	not:	on first hit You will get parents, and then after you will get other with the help of parent (optional arg), the id in responce will be parent for next hit (untill you get your desire category)
+
+
+9.	Categories
+	api:	http://domain.com/index.php/api/get_sub_cat?parent=1
+	req:	{ parent }
+	res:	{
+			    "responce": true,
+			    "subcat": [
+			        {
+			            "id": "4",
+			            "cat_type_id": "2",
+			            "title": "Jeans",
+			            "arb_title": "",
+			            "urdu_title": "Jeans",
+			            "slug": "jeans",
+			            "parent": "2",
+			            "leval": "2",
+			            "tags": "",
+			            "description": "",
+			            "image": "Euro_store_online_delivery_912941025cdc8308cd2105f70b0af752.jpg",
+			            "image2": "",
+			            "image2_status": "",
+			            "main_menu": "no",
+			            "main_right_menu": "no",
+			            "main_home_page": "no",
+			            "main_home_page_under_parent": "yes",
+			            "status": "1",
+			            "meta_title": "",
+			            "meta_key": "",
+			            "meta_desc": "",
+			            "filters": "size,color",
+			            "filter_ids": ""
+			        },
+			        {
+			            "id": "6",
+			            "cat_type_id": "2",
+			            "title": "Sweater",
+			            "arb_title": "",
+			            "urdu_title": "Sweater",
+			            "slug": "Sweater",
+			            "parent": "2",
+			            "leval": "2",
+			            "tags": "Women Winter Seater, Women Sweater",
+			            "description": "",
+			            "image": "Euro_store_online_delivery_d628300dfdae89f73a97a20dc834a8a0.jpg",
+			            "image2": "",
+			            "image2_status": "",
+			            "main_menu": "no",
+			            "main_right_menu": "no",
+			            "main_home_page": "no",
+			            "main_home_page_under_parent": "yes",
+			            "status": "1",
+			            "meta_title": "",
+			            "meta_key": "",
+			            "meta_desc": "",
+			            "filters": "size,color",
+			            "filter_ids": ""
+			        }
+			    ]
+			}
+	not:	this is just for getting child cats, the last one for multiple hits but this one only for getting next cats
+
+
+10.	Coupons
+	api:	http://domain.com/index.php/api/get_coupons?coupon_code=NOV20&payable_amount=3000
+	req:	{ coupon_code, payable_amount }
+	res:	{ "responce": true, "msg": "Coupon code apply successfully ", "Total_amount": 2900, "coupon_value": "100" }
+	err:	null
+			{ "responce": false,"msg": "This coupon is Expired", "Total_amount": null, "coupon_value": 0 }
+			{ "responce": false,"msg": "Your Cart Amount is not Enough For This Coupon ","Total_amount": null,"coupon_value": 0 }
+
+11.	Products
+	api:	http://domain.com/index.php/api/top_selling_product?limit=0
+	req:	{ limit }
+	res:	{
+			    "responce": "true",
+			    "top_selling_product": [
+			        {
+			            "product_id": "1",
+			            "product_name": "First Product",
+			            "category_id": "3",
+			            "product_description": "<p>dsadasd sadsad</p>\r\n",
+			            "price": "1040",
+			            "discount": "100",
+			            "sale_percentage": "8.00",
+			            "mrp": "1000",
+			            "product_image": "5.jpg",
+			            "in_stock": "1",
+			            "unit_value": "1",
+			            "unit": "QTY",
+			            "status": "1",
+			            "title": "Summer",
+			            "brand_title": "Ultra Club",
+			            "brand_image": "cda3f1a2605bd400addb4b13aaaa3bb5.jpg"
+			        },
+			        {
+			            "product_id": "2",
+			            "product_name": "A New Product",
+			            "category_id": "3",
+			            "product_description": "<p>ASDfa</p>\r\n",
+			            "price": "2000",
+			            "discount": "100",
+			            "sale_percentage": "4.00",
+			            "mrp": "1700",
+			            "product_image": "2tDso268.jpg",
+			            "in_stock": "1",
+			            "unit_value": "1",
+			            "unit": "QTY",
+			            "status": "1",
+			            "title": "Summer",
+			            "brand_title": "Ultra Club",
+			            "brand_image": "cda3f1a2605bd400addb4b13aaaa3bb5.jpg"
+			        }
+			    ]
+			}
+	not:	limit value 0 consider as the all records.
+
+
+12.	Products
+	api:	http://domain.com/index.php/api/get_products?cat_id=5&min_price=10&max_price=100&search=pro name&brands=1,2
+	opt:	{ cat_id (category id), min_price, max_price, search (what user type in search input - this will match as product name in database ), brands (this can in 1,2 formate for multiple sorting) }
+	res:	{
+			    "responce": true,
+			    "data": {
+			        "price_asc": [
+			            {
+			                "product_id": "11",
+			                "product_name": "Pro Color Price",
+			                "product_name_arb": "",
+			                "product_name_urdu": "Pro Color Price",
+			                "product_description_arb": "",
+			                "category_id": "13",
+			                "product_description": "<p>dasd asda sdasdsa</p>\r\n",
+			                "price": "500",
+			                "save": "0",
+			                "old_price": 500,
+			                "sale_percentage": "0.00",
+			                "mrp": "450",
+			                "product_image": "0ecdf2ffa801.jpg",
+			                "status": "0",
+			                "in_stock": "1",
+			                "unit_value": "1",
+			                "unit": "QTY",
+			                "increament": "0",
+			                "rewards": "",
+			                "stock": "2",
+			                "title": "Party",
+			                "brand_title": "Ultra Club",
+			                "brand_urdu_title": "Ultra Club",
+			                "brand_image": "cda3f1a2605bd400addb4b13aaaa3bb5.jpg",
+			                "size": "3,1,4",
+			                "color": "3,2,5,7,6",
+			                "brand_id": "5",
+			                "tags": false
+			            }
+			        ],
+			        "price_desc": [
+			            {
+			                "product_id": "11",
+			                "product_name": "Pro Color Price",
+			                "product_name_arb": "",
+			                "product_name_urdu": "Pro Color Price",
+			                "product_description_arb": "",
+			                "category_id": "13",
+			                "product_description": "<p>dasd asda sdasdsa</p>\r\n",
+			                "price": "500",
+			                "save": "0",
+			                "old_price": 500,
+			                "sale_percentage": "0.00",
+			                "mrp": "450",
+			                "product_image": "0ecdf2ffa801.jpg",
+			                "status": "0",
+			                "in_stock": "1",
+			                "unit_value": "1",
+			                "unit": "QTY",
+			                "increament": "0",
+			                "rewards": "",
+			                "stock": "2",
+			                "title": "Party",
+			                "brand_title": "Ultra Club",
+			                "brand_urdu_title": "Ultra Club",
+			                "brand_image": "cda3f1a2605bd400addb4b13aaaa3bb5.jpg",
+			                "size": "3,1,4",
+			                "color": "3,2,5,7,6",
+			                "brand_id": "5",
+			                "tags": false
+			            }
+			        ],
+			        "brands": [
+			            {
+			                "brand_id": "0",
+			                "title": null,
+			                "image": null,
+			                "totlal_products": "1"
+			            },
+			            {
+			                "brand_id": "5",
+			                "title": "Ultra Club",
+			                "image": "cda3f1a2605bd400addb4b13aaaa3bb5.jpg",
+			                "totlal_products": "11"
+			            }
+			        ]
+			    }
+			}
+	not:	please hit the api for real time resp (here you have some defualt sorting like -> price_asc, price_desc, title_asc, title_desc)
+
+
+13.	Products
+	api:	http://domain.com/index.php/api/get_products_simple?cat_id=5&min_price=10&max_price=100&search=pro name&brands=1,2
+	opt:	{ cat_id (category id), min_price, max_price, search (what user type in search input - this will match as product name in database ), brands (this can in 1,2 formate for multiple sorting) }
+	res:	{
+			    "responce": true,
+			    "data": {
+			        "products": [
+			            {
+			                "product_id": "11",
+			                "product_name": "Pro Color Price",
+			                "product_name_arb": "",
+			                "product_name_urdu": "Pro Color Price",
+			                "product_description_arb": "",
+			                "category_id": "13",
+			                "product_description": "<p>dasd asda sdasdsa</p>\r\n",
+			                "price": "500",
+			                "save": "0",
+			                "old_price": 500,
+			                "sale_percentage": "0.00",
+			                "mrp": "450",
+			                "product_image": "0ecdf2ffa801.jpg",
+			                "status": "0",
+			                "in_stock": "1",
+			                "unit_value": "1",
+			                "unit": "QTY",
+			                "increament": "0",
+			                "rewards": "",
+			                "stock": "2",
+			                "title": "Party",
+			                "brand_title": "Ultra Club",
+			                "brand_urdu_title": "Ultra Club",
+			                "brand_image": "cda3f1a2605bd400addb4b13aaaa3bb5.jpg",
+			                "size": "3,1,4",
+			                "color": "3,2,5,7,6",
+			                "brand_id": "5",
+			                "tags": false
+			            }
+			        ],
+			        "brands": [
+			            {
+			                "brand_id": "0",
+			                "title": null,
+			                "image": null,
+			                "totlal_products": "1"
+			            },
+			            {
+			                "brand_id": "5",
+			                "title": "Ultra Club",
+			                "image": "cda3f1a2605bd400addb4b13aaaa3bb5.jpg",
+			                "totlal_products": "11"
+			            }
+			        ]
+			    }
+			}
+
+
+14.	Single
+	api:	http://domain.com/index.php/api/single/1
+	arg:	{ "product_id" }
+	res:	{ "responce": true,"product": data, "tags": data, "sizes": data, "colors": data, "photos": data }
+	err:	{ "responce": false, "error": "error! : wrong ID passed." }
+
+15.	Pages
+	api:	http://domain.com/index.php/api/aboutus
+	res:	{ "responce": true,"data": data }
+
+
+16.	Pages
+	api:	http://domain.com/index.php/api/returnpolicy
+	res:	{"responce": true, "data": data }
+
+
+17.	Pages
+	api:	http://domain.com/index.php/api/terms
+	res:	{ "responce": true,"data": data }
+
+
+18.	Orders
+	api:	http://domain.com/index.php/api/my_orders/1
+	req:	{ user_id }
+	res:	[
+			    {
+			        "sale_id": "31",
+			        "user_id": "1",
+			        "on_date": "0000-00-00",
+			        "delivery_time_from": "",
+			        "delivery_time_to": "",
+			        "status": "4",
+			        "note": "",
+			        "is_paid": "0",
+			        "total_amount": "2000",
+			        "total_save": "0",
+			        "discount_code": "",
+			        "discount": "0",
+			        "total_rewards": "",
+			        "total_kg": "0",
+			        "total_items": "1",
+			        "socity_id": "0",
+			        "delivery_address": "",
+			        "location_id": "72",
+			        "delivery_charge": "130",
+			        "new_store_id": "0",
+			        "assign_to": "0",
+			        "payment_method": "card",
+			        "card_name": "test",
+			        "card_number": "4242424242424242",
+			        "card_cvc": "123",
+			        "card_expiry_month": "12",
+			        "card_expiry_year": "2024",
+			        "card_payment_status": "none",
+			        "save_my_card": "yes",
+			        "strip_id": "",
+			        "strip_balance_transaction": "",
+			        "type": "grocery",
+			        "at": "2021-02-02 09:26:08",
+			        "updated_at": "2021-02-02 09:43:08",
+			        "tracking_status": "delivered"
+			    }
+			]
+	err:	{ "responce": false, "error": "Warning! : please provide user ID" }
+
+19.	Orders
+	api:	http://domain.com/index.php/api/delivered_complete?user_id=1
+	req:	{ user_id }
+	res:	[
+			    {
+			        "sale_id": "31",
+			        "user_id": "1",
+			        "on_date": "0000-00-00",
+			        "delivery_time_from": "",
+			        "delivery_time_to": "",
+			        "status": "4",
+			        "note": "",
+			        "is_paid": "0",
+			        "total_amount": "2000",
+			        "total_save": "0",
+			        "discount_code": "",
+			        "discount": "0",
+			        "total_rewards": "",
+			        "total_kg": "0",
+			        "total_items": "1",
+			        "socity_id": "0",
+			        "delivery_address": "",
+			        "location_id": "72",
+			        "delivery_charge": "130",
+			        "new_store_id": "0",
+			        "assign_to": "0",
+			        "payment_method": "card",
+			        "card_name": "test",
+			        "card_number": "4242424242424242",
+			        "card_cvc": "123",
+			        "card_expiry_month": "12",
+			        "card_expiry_year": "2024",
+			        "card_payment_status": "none",
+			        "save_my_card": "yes",
+			        "strip_id": "",
+			        "strip_balance_transaction": "",
+			        "type": "grocery",
+			        "at": "2021-02-02 09:26:08",
+			        "updated_at": "2021-02-02 09:43:08",
+			        "tracking_status": "delivered"
+			    }
+			]
+	err:	{ "responce": false, "error": "Warning! : please provide user ID" }
+
+
+20.	Orders
+	api:	http://domain.com/index.php/api/cancel_order?user_id=1&sale_id=25
+	req:	{ user_id, sale_id }
+	res:	{ "responce": true, "message": "Your order cancel successfully" }
+	err:	{ "responce": false, "error": "Warning! : please provide sale/user ID" }
+
+21.	Orders
+	api:	http://domain.com/index.php/api/get_waive_limit_settings
+	res:	{ "data": data }
+
+22.	Address
+	api:	http://domain.com/index.php/api/add_address?user_id=1&title=home&pincode=54000&country_id=1&state_id=1&city_id=1&socity_id=1&house_no=nera xyz&receiver_name=mab&receiver_mobile=03001234567&receiver_email=mail@domain.com
+	req:	(user_id, title,pincode, country_id, state_id, city_id, socity_id, house_no, receiver_name, receiver_mobile)
+	opt:	{receiver_email}
+	res:	res:	{ "responce": true,"data": data }
+	err:	{ "responce": false, "error": "Warning! : please provide all required data" }
+
+
+23.	Address
+	api:	http://domain.com/index.php/api/get_address?user_id=1
+	req:	(user_id)
+	res:	res:	{ "responce": true, "data": data}
+	err:	{ "responce": false, "error": "User ID required" }
+
+
+24.	Address
+	api:	http://domain.com/index.php/api/delete_address?user_address_id=1
+	req:	(user_address_id)
+	res:	{ "responce": true, "message": "Your Address deleted successfully." }
+	err:	{ "responce": false, "error": "Address ID required" }
+
+
+25.	Address
+	api:	http://domain.com/index.php/api/edit_address?user_address=1&title=home&pincode=54000&country_id=1&state_id=1&city_id=1&socity_id=1&house_no=nera xyz&receiver_name=mab&receiver_mobile=03001234567&receiver_email=mail@domain.com
+	req:	(user_address_id, title,pincode, country_id, state_id, city_id, socity_id, house_no, receiver_name, receiver_mobile)
+	opt:	{receiver_email}
+	res:	{ "responce": true, "message": "Your Address Update successfully" }
+	err:	{ "responce": false, "error": "Warning! : please provide all required data" }
+
+
+26.	Address
+	api:	http://domain.com/index.php/api/get_countries
+	res:	{ "data": data }
+
+
+27.	Address
+	api:	http://domain.com/index.php/api/get_states/1
+	arg:	{ "country_id" }
+	res:	{ "data": data }
+
+
+28.	Address
+	api:	http://domain.com/index.php/api/get_cities/1
+	arg:	{ "state_id" }
+	res:	{ "data": data }
+
+
+
+
+

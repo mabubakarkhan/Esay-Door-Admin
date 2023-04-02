@@ -1,0 +1,32 @@
+[04-May-2018 15:49:25 Asia/Kolkata] PHP Fatal error:  Call to undefined method Product_model::get_user() in /home/neeraywf/public_html/grocery_test/store/application/controllers/Api.php on line 506
+[04-May-2018 15:50:01 Asia/Kolkata] PHP Fatal error:  Call to undefined method Product_model::get_user() in /home/neeraywf/public_html/grocery_test/store/application/controllers/Api.php on line 506
+[08-May-2018 12:35:33 Etc/GMT] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /home/neeraywf/public_html/grocery_test/store/application/controllers/Users.php on line 112
+[08-May-2018 12:35:56 Etc/GMT] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /home/neeraywf/public_html/grocery_test/store/application/controllers/Users.php on line 112
+[09-May-2018 09:18:06 Etc/GMT] PHP Fatal error:  Cannot redeclare Users_model::get_user_by_id() in /home/neeraywf/public_html/grocery_test/store/application/models/Users_model.php on line 41
+[09-May-2018 09:20:33 Etc/GMT] PHP Fatal error:  Cannot redeclare Users_model::get_user_by_id() in /home/neeraywf/public_html/grocery_test/store/application/models/Users_model.php on line 41
+[09-May-2018 09:21:56 Etc/GMT] PHP Fatal error:  Call to undefined method Users_model::get_user_by_id_store() in /home/neeraywf/public_html/grocery_test/store/application/controllers/Users.php on line 76
+[09-May-2018 10:26:03 Etc/GMT] PHP Parse error:  syntax error, unexpected '.' in /home/neeraywf/public_html/grocery_test/store/application/views/admin/product/purchase.php on line 80
+[10-May-2018 07:06:14 Etc/GMT] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/neeraywf/public_html/grocery_test/store/application/views/admin/orders/orderslist.php on line 129
+[20-Sep-2018 11:04:48 Etc/GMT] PHP Fatal error:  require_once(): Failed opening required 'PHPExcel.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 3
+[20-Sep-2018 11:05:54 Etc/GMT] PHP Fatal error:  require_once(): Failed opening required 'PHPExcel.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 3
+[20-Sep-2018 15:50:57 Etc/GMT] PHP Fatal error:  require_once(): Failed opening required 'PHPExcel.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 3
+[21-Sep-2018 05:12:42 Etc/GMT] PHP Fatal error:  require_once(): Failed opening required 'PHPExcel.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 3
+[21-Sep-2018 07:23:31 Etc/GMT] PHP Fatal error:  require_once(): Failed opening required 'PHPExcel.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 3
+[21-Sep-2018 07:33:53 Etc/GMT] PHP Fatal error:  require_once(): Failed opening required 'PHPExcel.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 3
+[21-Sep-2018 07:37:02 Etc/GMT] PHP Fatal error:  require_once(): Failed opening required 'PHPExcel.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/neeraywf/public_html/minerva/store/application/libraries/Excel.php on line 3
+[21-Sep-2018 07:37:09 Etc/GMT] PHP Fatal error:  require_once(): Failed opening required 'PHPExcel.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/neeraywf/public_html/minerva/store/application/libraries/Excel.php on line 3
+[22-Sep-2018 07:48:04 Etc/GMT] PHP Fatal error:  require_once(): Failed opening required 'PHPExcel.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/neeraywf/public_html/minerva/store/application/libraries/Excel.php on line 3
+[22-Sep-2018 08:07:25 Etc/GMT] PHP Fatal error:  Cannot redeclare class Excel in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 11
+[22-Sep-2018 08:36:00 Etc/GMT] PHP Fatal error:  Cannot redeclare class Excel in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 11
+[22-Sep-2018 08:41:52 Etc/GMT] PHP Fatal error:  Cannot redeclare class Excel in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 11
+[22-Sep-2018 08:41:54 Etc/GMT] PHP Fatal error:  Cannot redeclare class Excel in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 11
+[22-Sep-2018 09:04:44 Etc/GMT] PHP Fatal error:  Cannot redeclare class Excel in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 11
+[22-Sep-2018 10:27:17 Etc/GMT] PHP Fatal error:  Cannot redeclare class Excel in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 11
+[24-Sep-2018 05:23:35 Etc/GMT] PHP Fatal error:  Cannot redeclare class Excel in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 11
+[24-Sep-2018 05:24:01 Etc/GMT] PHP Fatal error:  Cannot redeclare class Excel in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 11
+[24-Sep-2018 06:08:55 Etc/GMT] PHP Fatal error:  Cannot redeclare class Excel in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 11
+[24-Sep-2018 08:01:17 Etc/GMT] PHP Fatal error:  Cannot redeclare class Excel in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 11
+[24-Sep-2018 08:01:19 Etc/GMT] PHP Fatal error:  Cannot redeclare class Excel in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 11
+[24-Sep-2018 08:06:37 Etc/GMT] PHP Fatal error:  Cannot redeclare class Excel in /home/neeraywf/public_html/minerva/store/system/libraries/Excel.php on line 11
+[06-Feb-2019 08:55:34 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/u602795421/domains/gogrocer.pe.hu/public_html/store/application/config/config.php on line 523
+[06-Feb-2019 08:55:34 UTC] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
